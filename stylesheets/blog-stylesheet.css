@@ -1,0 +1,68 @@
+/*General Formatting*/
+html {
+  background-color: #696969;
+}
+
+body {
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+a:visited {
+  color: red;
+}
+
+/*Header Formatting*/
+header {
+  text-align: center;
+  font-size: 48px;
+}
+
+/*Body Formatting*/
+#body {
+  width: 75%;
+  float: left;
+  display: block;
+  background-color: black;
+}
+
+#post-title {
+  font-size: 28px;
+  text-decoration: underline;
+  font-weight: bold;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+
+#post-date {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 1px;
+}
+
+/*Archive Formatting*/
+#archive {
+  width: 12%;
+  float:right;
+  margin: 15px;
+  border: 1px solid white;
+  text-align: center;
+  padding-bottom: 20px;
+  background-color: black;
+}
+
+#archive a {
+  display: block;
+  padding: 5px;
+  text-decoration: none;
+}
+ h4 {
+  text-decoration: underline;
+ }
+
+
+
+
