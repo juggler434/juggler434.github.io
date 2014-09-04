@@ -1,0 +1,24 @@
+/* include your css here */
+  #driver {
+                width: 40%;
+                float: left;
+
+            }
+            #navigator {
+                width: 40%;
+                float: left;
+
+            }
+
+            #thought {
+                clear: both;
+
+            }
+            html {
+                background-image: url("https://c1.staticflickr.com/5/4076/4778833504_eb738193f5_z.jpg");
+                background-repeat: no-repeat;
+                background-size: 100%;
+                color: yellow;
+
+            }
+            #title{font-size: 24px;}
