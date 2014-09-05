@@ -67,3 +67,15 @@ section {
 article {
   padding: 10px;
 }
+
+/*page specific styling*/
+
+/*blog posts*/
+#date {
+  font-weight: bold;
+  margin-top: -1em;
+}
+
+#blog-title {
+  text-decoration: underline;
+}
