@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My DBC Page</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index-stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My DBC Page</h1>
+      <nav>
+        <ul>
+          <li><a href="http://juggler434.github.io">About Me</a></li>
+          <li><a href="http://juggler434.github.io/blog-posts/blog-index.html">Blog</a></li>
+          <li><a href="http://juggler434.github.io/projects/project-index.html">Projects</a></li>
+          <li><a href="http://juggler434.github.io/contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id='main'>
+
+    <section>
+      <article>
+        <h2 id='blog-title'>CSS Inline vs. Inline Block</h2><!--blot title goes here-->
+        <p id='date'>Posted September 5, 2014</p><!--date posted goes here-->
+        <p>In this post I'm going to be taking a closer look at the difference between display: inline and display: inline-block in CSS.  I have to admit, this is a topic that I struggled with in CSS, so I'm hoping this will bring clarification to others</p><!--Main post goes here-->
+
+        <p>I'm going to start with how inline and inline-block display differ from block display.  The answer is very simple and right in the name.  A block element forces a line break after it, while inline and inline-block allow elemnts to be laid next to each other.</p>
+
+        <p>So we've figured out we want to lay out our objects next to each other, now we have to figure out whether we want to use an inline display or an inline-block display.  The basic difference is that the dimensions of an inline elemnt are set by its content, where inline-block elements can be adjusted just like blocks.  <a href="http://http://stackoverflow.com/questions/9189810/css-display-inline-vs-inline-block">This</a> response on stack overflow does a pretty good job of summing up the difference.  To summarize inline elements will respect left and right padding and margins, but not top and bottom, and cannot have a set height and width.  Alternatively, inline-block respects margin and padding on all sides, and can have a set height and width.</p>
+
+        <p>To see and example of an inline element, you have to look no further than the link above.  &lt;a&gt; tags default to inline, which allows it rest nicely within the paragraph.</p>
+
+        <p>This image from <a href="http://webcodehelpers.com">webcodehelpers.com</a> does a pretty good job of showing how the different elements work</p>
+
+        <img src="http://4.bp.blogspot.com/-TiwOixlooJk/U4UyEnv_XpI/AAAAAAAACFs/NuuLz2IvoZ4/s1600/css-display-block-vs-inline-block.png">
+
+        <p>I hope that this helped you better understand the differences between inline and inline-block elements in CSS</p>
+
+        <h3>References</h3>
+        <ul>
+          <li><a href="http://css.webcodehelpers.com/2014/05/css-display-block-vs-inline-block-vs.html">http://css.webcodehelpers.com/2014/05/css-display-block-vs-inline-block-vs.html</a></li>
+          <li><a href="http://stackoverflow.com/questions/21614938/html-element-which-defaults-to-displayinline-block">http://stackoverflow.com/questions/21614938/html-element-which-defaults-to-displayinline-block</a></li>
+          <li><a href="http://www.w3schools.com/cssref/pr_class_display.asp">http://www.w3schools.com/cssref/pr_class_display.asp</a></li>
+          <li><a href="http://adamschwartz.co/magic-of-css/chapters/2-layout/">http://adamschwartz.co/magic-of-css/chapters/2-layout/</a></li>
+        </ul>
+
+    </section>
