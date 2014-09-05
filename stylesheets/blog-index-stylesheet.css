@@ -57,7 +57,6 @@ header nav a:visited {
   color: white;
 }
 
-/*Main Body Styling*/
 section {
   background-color: white;
   width: 90%;
@@ -65,27 +64,6 @@ section {
   margin-top: 25px
 }
 
-section article {
-  width: 75%;
-  display: inline-block;
-  background-color: white;
-
-}
-
-section img {
-  width: 20%;
-  display: inline-block;
-  background-color: white;
-  vertical-align: middle;
+article {
   padding: 10px;
 }
-
-article h2 {
-  padding-left: 10px;
-}
-
-article p {
-  padding-left: 10px;
-}
-
-
