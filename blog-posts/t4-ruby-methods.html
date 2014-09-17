@@ -22,12 +22,12 @@
       <article>
         <h2 id='blog-title'>Ruby Method #map</h2><!--blot title goes here-->
         <p id='date'>Posted September 17, 2014</p><!--date posted goes here-->
-        <p>Today I'm going to be taking a look at a really useful Enumerator method in Ruby, #map.  #map is used on an array to execute a given block on the array and return a new array with the results.  I know, that sounds complicated, but its really not and here are a few example of how to use it.</p><!--Main post goes here-->
+        <p>Today I'm going to be taking a look at a really useful Enumerator method in Ruby, #map.  #map is used on an array to execute a given block on the array and return a new array with the results.  I know, that sounds complicated, but it's really not and here are a few examples of how to use it.</p><!--Main post goes here-->
         <pre> my_array = [1,2,3,4]
  my_array.map{ |x| x * 2 }
  =>[2,4,6,8]
         </pre>
-        <p>See, that wasn't so bad.  All #map did was go over every element of the array, and multiply it by two, like our block told it to do.  Now the thing about #map is, it's non-destructive.  This means that our original array is in tact.  So lets take a look at what that means in an example:</p>
+        <p>See, that wasn't so bad.  All #map did was go over every element of the array, and multiply it by two, like our block told it to.  Now the thing about #map is, it's non-destructive.  This means that our original array is in tact.  So lets take a look at what that means in an example:</p>
             <pre> my_array = [1,2,3,4]
  my_array.map{ |x| x * 2 }
  print my_array
