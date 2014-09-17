@@ -43,12 +43,16 @@
         <p>There we have it, we've replaced my_array with our results!</p>
         <p>At this point you might be asking yourself "what's the difference between #map and #each?"  Thats a good question, and I'm going to try and explain it.  #each performs the block of code on each element of the array, and then returns the original list, while #map performs the block of text on each element of the array and returns a new array with the results.  I can see you scratching your head so lets go back to some examples:
           <pre> my_array = [1,2,3,4]
+
  print my_array.each { |x| x * 2 }
  [1,2,3,4]
+
  my_array.each { |x| print (x * 2)}
  2468
+
  print my_array.map { |x| x * 2 }
  [2,4,6,8]
+
  print my_array
  [1,2,3,4]
        </pre>
