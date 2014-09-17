@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby Method</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index-stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My DBC Page</h1>
+      <nav>
+        <ul>
+          <li><a href="http://juggler434.github.io">About Me</a></li>
+          <li><a href="http://juggler434.github.io/blog-posts/blog-index.html">Blog</a></li>
+          <li><a href="http://juggler434.github.io/projects/project-index.html">Projects</a></li>
+          <li><a href="http://juggler434.github.io/contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id='main'>
+
+    <section>
+      <article>
+        <h2 id='blog-title'>Ruby Method #map</h2><!--blot title goes here-->
+        <p id='date'>Posted September 17, 2014</p><!--date posted goes here-->
+        <p>Today I'm going to be taking a look at a really useful Enumerator method in Ruby, #map.  #map is used on an array to execute a given block on the array and return a new array with the results.  I know, that sounds complicated, but its really not and here are a few example of how to use it.</p><!--Main post goes here-->
+        <pre> my_array = [1,2,3,4]
+ my_array.map{ |x| x * 2 }
+ =>[2,4,6,8]
+        </pre>
+        <p>See, that wasn't so bad.  All #map did was go over every element of the array, and multiply it by two, like our block told it to do.  Now the thing about #map is, it's non-destructive.  This means that our original array is in tact.  So lets take a look at what that means in an example:</p>
+            <pre> my_array = [1,2,3,4]
+ my_array.map{ |x| x * 2 }
+ print my_array
+ [1,2,3,4]
+        </pre>
+        <p>So here we can see that the my_array variable is still the same, even though we called #map on it.  If we want to make the #map method destructive, all we have to do is add a ! (or bang) to it, and it will now replace our original array with our modified results.  Lets get our example from above again, and this time make it destructive.</p>
+      <pre> my_array = [1,2,3,4]
+ my_array.map!{ |x| x * 2 }
+ print my_array
+ [2,4,6,8]
+        </pre>
+
+        <p>There we have it, we've replaced my_array with our results!</p>
+        <p>At this point you might be asking yourself "what's the difference between #map and #each?"  Thats a good question, and I'm going to try and explain it.  #each performs the block of code on each element of the array, and then returns the original list, while #map performs the block of text on each element of the array and returns a new array with the results.  I can see you scratching your head so lets go back to some examples:
+          <pre> my_array = [1,2,3,4]
+ print my_array.each { |x| x * 2 }
+ [1,2,3,4]
+ my_array.each { |x| print (x * 2)}
+ 2468
+ print my_array.map { |x| x * 2 }
+ [2,4,6,8]
+ print my_array
+ [1,2,3,4]
+       </pre>
+
+       <p>There you have it! You now know about the #map method in Ruby, and how its different than #each.  #map is very useful, and in just a short time I've used it a lot.  Now go forth and code!</p>
+
+
+    </section>
