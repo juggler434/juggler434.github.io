@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Ruby Classes</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index-stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My DBC Page</h1>
+      <nav>
+        <ul>
+          <li><a href="http://juggler434.github.io">About Me</a></li>
+          <li><a href="http://juggler434.github.io/blog-posts/blog-index.html">Blog</a></li>
+          <li><a href="http://juggler434.github.io/projects/project-index.html">Projects</a></li>
+          <li><a href="http://juggler434.github.io/contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id='main'>
+
+    <section>
+      <article>
+        <h2 id='blog-title'>Ruby Classes</h2><!--blot title goes here-->
+        <p id='date'>Posted September 25, 2014</p><!--date posted goes here-->
+        <p>This week we've been learning about classes in Ruby.  So what is a class?  A class is like the framework in which objects are built.  That sounds messy, so we're going to go through and build a class that will let us make some objects.</p><!--Main post goes here-->
+        <p>Since the new edition of Dungeons and Dragons just came out, I'm going to make a class that will let us build a dungeon room by room. We'll start by setting up our class.</p>
+        <pre>
+          class DungeonRoom
+
+          end
+        </pre>
+        <p>There we have our new class, but its not really doing much.  We want to be able to set up our room with some basic statistics right when we make it, so for that we are going to create a method called initialize.  This method will automatically be called when we create a new room.</p>
+        <pre>
+          class DungeonRoom
+            def initialize(length, width, height)
+              @objects = []
+              @monsters = []
+              @length = length
+              @width = width
+              @height = height
+            end
+          end
+        </pre>
+        <p>Now when we make a new room, we will set a length, width and height, and it will create two empty arrays for objects and monsters.  You might be wondering what the deal with those variables with @ in front of them is.  Those are called instance variables, and they can be manipulated by any method within the class (as opposed to local variables which can't be messed with across methods).  We're going to do more with those variables in a bit.</p>
+
+        <p>Now a dungeon room is pretty boring with out any monsters in it, so lets make a way to populate our room.  We're going to create a new method for our class called add_monster</p>
+
+            <pre>
+          class DungeonRoom
+            def initialize(length, width, height)
+              @objects = []
+              @monsters = []
+              @length = length
+              @width = width
+              @height = height
+            end
+
+            def add_monster(monster)
+              @monsters << monster
+            end
+          end
+        </pre>
+        <p>Thats was easy, but our dungeon now needs some furniture, so lets add in a way to add some objects and a way to look at whats in our room.</p>
+      <pre>
+          class DungeonRoom
+            def initialize(length, width, height)
+              @objects = []
+              @monsters = []
+              @length = length
+              @width = width
+              @height = height
+            end
+
+            def add_monster(monster)
+              @monsters << monster
+            end
+
+            def add_object(object)
+              @objects << object
+            end
+
+            def show
+              puts "The room is #{@length} feet by #{@width} feet and #{@height} feet tall."
+              puts "Monsters: #{@monsters}"
+              puts "Objects: #{@objects}"
+            end
+
+          end
+        </pre>
+        <p>Allright, we now have our dungeon room creator class.  Lets use it to make a room and check it out!</p>
+
+        <pre>
+          entrance = DungeonRoom.new(10,10,20)
+          entrance.add_monster("Orc")
+          entrance.add_monster("Owlbear")
+          entrance.add_object("Table")
+          entrance.add_object("Pie")
+          entrance.show
+
+          The room is 10 feet by 10 feet and 20 feet tall.
+          Monsters: ["Orc", "Owlbear"]
+          Objects: ["Table", "Pie"]
+        </pre>
+
+        <p>There is the quick and dirty rundown of how to make a ruby class.  We made a class named DungeonRoom, that we then used to make a room object.  I hope this helps you understand a little more about clases in Ruby.  Now go forth and code!</p>
+
+    </section>
