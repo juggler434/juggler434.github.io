@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Classes vs. Modules</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index-stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My DBC Page</h1>
+      <nav>
+        <ul>
+          <li><a href="http://juggler434.github.io">About Me</a></li>
+          <li><a href="http://juggler434.github.io/blog-posts/blog-index.html">Blog</a></li>
+          <li><a href="http://juggler434.github.io/projects/project-index.html">Projects</a></li>
+          <li><a href="http://juggler434.github.io/contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id='main'>
+
+    <section>
+      <article>
+        <h2 id='blog-title'>Classes vs. Modules</h2><!--blot title goes here-->
+        <p id='date'>Posted October 2, 2014</p><!--date posted goes here-->
+        <p>This week I've started learning about Object Oriented Design.  This is a complex topic, and I'm just starting to scratch the surface.  I hope to be able to share a little of what I've learned here by  explaining the difference between classes and modules in Ruby.</p>
+
+        <p>First I'm going to talk about what modules and classes are used for.  They are both used to store groups of methods.  Here's an example of a module.</p>
+
+        <pre>
+          module Me
+            def Me.name
+              puts "My name is Bill"
+            end
+
+            LASTNAME = "My last name is Gallagher"
+
+          end
+
+          Me.name
+            "My name is Bill"
+
+          puts Me::LASTNAME
+           "My last name is Gallagher "
+        </pre>
+
+        <p>Here's how you could do something similar with a class:</p>
+        <pre>
+        class Me
+          attr_reader :last_name
+          def initialize
+            @last_name = "My last name is Gallagher"
+          end
+          def name
+            puts "My name is Bill"
+          end
+        end
+
+        bill = Me.new
+        bill.name
+          "My name is Bill"
+        p bill.last_name
+          "My last name is Gallagher"
+      </pre>
+
+        <p>So how are the two of these different? Well to start, I'm going to borrow a table from<a href="http://fullstackwebdev.com">fullstackwebdev.com</a>.  This table lays out the differences between modules and classes.  I know it uses a lot of ugly scary words, but we're going to focus on a few of the important elements and break them down.</p>
+        <img src="http://i.stack.imgur.com/czLqP.jpg">
+
+        <p>Probably the most important difference is at the very top of the table.  Classes can be instantiated, and modules cannot.  You're probably scratching your head right now and asking "but what does that mean?"  Its not as scary as it sounds.  All it means is that classes can be used to create unique objects, and modules cannot.  So above, when I made bill = Me.new, I was creating a new object called bill, that was of the Me class.  I can then make another object like this: steve = Me.new, and we now have two seperate objects with similar properties.(Right now it will stay Steve's name is Bill, but you get the idea).</p>
+
+        <p>Next we're going to jump down a bit on the table to inclusion.  You can see that classes cannot be included, while modules can by using the include command.  Lets take a look at this in some code:</p>
+
+        <pre>
+          module TestModule
+            def display
+              puts "This is from the module"
+            end
+          end
+
+          class TestClass
+            include TestModule
+          end
+
+          sample = TestClass.new
+          sample.display
+            "This is from the module"
+        </pre>
+        <p>Here you can see that we didn't actually define any methods in our class, but we included our module, and so its methods could be called on our object.  If we replace TestModule with a class, then we would get an error.</p>
+
+        <p>I know theres a lot more on that table, but I hit some of the more important bits.  If you remember that classes are used to create objects and modules are not, and that you can include a module in a class but not vice versa, you're off to a good start.  Now go forth and code!</p>
+
+        <h3>References</h3>
+        <ul>
+          <li><a href="http://fullstackwebdev.com">http://fullstackwebdev.com</a></li>
+          <li><a href="http://ruby.learncodethehardway.org/book/ex40.html">http://ruby.learncodethehardway.org/book/ex40.html</a></li>
+          <li><a href="http://matt.aimonetti.net/posts/2012/07/30/ruby-class-module-mixins/">http://matt.aimonetti.net/posts/2012/07/30/ruby-class-module-mixins/</a></li>
+          <li><a href="http://www.ruby-doc.org/core-2.1.3/Module.html">http://www.ruby-doc.org/core-2.1.3/Module.html</a></li>
+        </ul>
+    </section>
