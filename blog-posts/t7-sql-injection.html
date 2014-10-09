@@ -26,31 +26,31 @@
 
         <p>For the first example, lets say you have an input for user id, and when someone enters their id, it returns all the info on them.  Your SQL code might look something like this:</p>
 
-        <code>
+        <pre>
           SELECT *
           FROM users
           WHERE userid = input
-        </code>
+        </pre>
 
         <p>Now, for their input, someone puts in 112 OR 5 = 5.  Now your code looks like this:</p>
-        <code>
+        <pre>
           SELECT *
           FROM users
           WHERE userid= 112 or 5=5
-        </code>
+        </pre>
 
         <p>Since 5 = 5 is always true, this will return all of the information on all users.  Thats not good, especially if sensitive information is stored on those tables.</p>
 
         <p>I'm not going to go through all of the ways that SQL injection is used, but I do want to look at one more.  In this example, a command is forced in through the input.</p>
 
-        <code>
+        <pre>
           txtUserId = getRequestString("UserId");
           txtSQL = "SELECT * FROM users WHERE UserId = " + txtUserId;
 
-        </code>
+        </pre>
         <p>Now for someones username, they input 12; DROP TABLE students, which results in:</p>
 
-        <code>SELECT * FROM users WHERE UserId = 12; DROP TABLE students</code>
+        <pre>SELECT * FROM users WHERE UserId = 12; DROP TABLE students</pre>
 
         <p>You now have a command that is going to delete your students table.</p>
 
