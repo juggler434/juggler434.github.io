@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SQL Injection</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index-stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My DBC Page</h1>
+      <nav>
+        <ul>
+          <li><a href="http://juggler434.github.io">About Me</a></li>
+          <li><a href="http://juggler434.github.io/blog-posts/blog-index.html">Blog</a></li>
+          <li><a href="http://juggler434.github.io/projects/project-index.html">Projects</a></li>
+          <li><a href="http://juggler434.github.io/contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id='main'>
+
+    <section>
+      <article>
+        <h2 id='blog-title'>SQL Injection</h2><!--blot title goes here-->
+        <p id='date'>Posted October 9, 2014</p><!--date posted goes here-->
+        <p>This week I'll be taking a look into SQL injection.  SQL Injection is a way malicious user to tamper with your databases, be it getting all of your info or causing your tables to be deleted.  They do this by forcing SQL commands in through user input fields.  Lets take a look at some examples, and then talk about ways to avoid this from happening to you.</p>
+
+        <p>For the first example, lets say you have an input for user id, and when someone enters their id, it returns all the info on them.  Your SQL code might look something like this:</p>
+
+        <code>
+          SELECT *
+          FROM users
+          WHERE userid = input
+        </code>
+
+        <p>Now, for their input, someone puts in 112 OR 5 = 5.  Now your code looks like this:</p>
+        <code>
+          SELECT *
+          FROM users
+          WHERE userid= 112 or 5=5
+        </code>
+
+        <p>Since 5 = 5 is always true, this will return all of the information on all users.  Thats not good, especially if sensitive information is stored on those tables.</p>
+
+        <p>I'm not going to go through all of the ways that SQL injection is used, but I do want to look at one more.  In this example, a command is forced in through the input.</p>
+
+        <code>
+          txtUserId = getRequestString("UserId");
+          txtSQL = "SELECT * FROM users WHERE UserId = " + txtUserId;
+
+        </code>
+        <p>Now for someones username, they input 12; DROP TABLE students, which results in:</p>
+
+        <code>SELECT * FROM users WHERE UserId = 12; DROP TABLE students</code>
+
+        <p>You now have a command that is going to delete your students table.</p>
+
+        <p>So we've seen some ways that malicious people can mess with your site, so how do we prevent it?  There are a couple of things you can do.  One is to limit the input fields not allow certain words or characters.  This isn't the best way to go about it, as your limiting what kinds of usernames and passwords your users can have, and there are still ways around it.  A better way is to use SQL parameters.  These parameters will check to make sure that each input is correct for the column, and that its not executed as part of the SQL.  Lets take a look at how to set this up.</p>
+
+        <code>
+          txtUserId = getRequestString("UserId");
+          txtSQL = "SELECT * FROM Users where UserId = @0";
+          db.Execute(txtSQL, txtUserID)
+        </code>
+
+        <p>There you have it, a quick rundown of SQL injection, and a way to help prevent it from happening to you.  I hope you found it helpful.  Now go forth and code.</p>
+
+        <h3>References</h3>
+        <ul>
+          <li><a href="http://www.w3schools.com/sql/sql_injection.asp">http://www.w3schools.com/sql/sql_injection.asp</a></li>
+          <li><a href="http://en.wikipedia.org/wiki/SQL_injection">http://en.wikipedia.org/wiki/SQL_injection</a></li>
+        </ul>
+
+    </section>
