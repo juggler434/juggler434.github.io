@@ -64,7 +64,9 @@
         <pre>
           txtUserId = getRequestString("UserId");
 
+
           txtSQL = "SELECT * FROM Users where UserId = @0";
+
 
           db.Execute(txtSQL, txtUserID)
         </pre>
