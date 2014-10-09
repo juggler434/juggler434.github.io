@@ -28,14 +28,18 @@
 
         <pre>
           SELECT *
+
           FROM users
+
           WHERE userid = input
         </pre>
 
         <p>Now, for their input, someone puts in 112 OR 5 = 5.  Now your code looks like this:</p>
         <pre>
           SELECT *
+
           FROM users
+
           WHERE userid= 112 or 5=5
         </pre>
 
@@ -45,6 +49,7 @@
 
         <pre>
           txtUserId = getRequestString("UserId");
+
           txtSQL = "SELECT * FROM users WHERE UserId = " + txtUserId;
 
         </pre>
@@ -56,11 +61,13 @@
 
         <p>So we've seen some ways that malicious people can mess with your site, so how do we prevent it?  There are a couple of things you can do.  One is to limit the input fields not allow certain words or characters.  This isn't the best way to go about it, as your limiting what kinds of usernames and passwords your users can have, and there are still ways around it.  A better way is to use SQL parameters.  These parameters will check to make sure that each input is correct for the column, and that its not executed as part of the SQL.  Lets take a look at how to set this up.</p>
 
-        <code>
+        <pre>
           txtUserId = getRequestString("UserId");
+
           txtSQL = "SELECT * FROM Users where UserId = @0";
+
           db.Execute(txtSQL, txtUserID)
-        </code>
+        </pre>
 
         <p>There you have it, a quick rundown of SQL injection, and a way to help prevent it from happening to you.  I hope you found it helpful.  Now go forth and code.</p>
 
