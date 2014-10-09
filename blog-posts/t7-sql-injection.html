@@ -22,7 +22,7 @@
       <article>
         <h2 id='blog-title'>SQL Injection</h2><!--blot title goes here-->
         <p id='date'>Posted October 9, 2014</p><!--date posted goes here-->
-        <p>This week I'll be taking a look into SQL injection.  SQL Injection is a way malicious user to tamper with your databases, be it getting all of your info or causing your tables to be deleted.  They do this by forcing SQL commands in through user input fields.  Lets take a look at some examples, and then talk about ways to avoid this from happening to you.</p>
+        <p>This week I'll be taking a look into SQL injection.  SQL injection is a way malicious user to tamper with your databases, be it getting all of your info or causing your tables to be deleted.  They do this by forcing SQL commands in through user input fields.  Lets take a look at some examples, and then talk about ways to avoid this from happening to you.</p>
 
         <p>For the first example, lets say you have an input for user id, and when someone enters their id, it returns all the info on them.  Your SQL code might look something like this:</p>
 
@@ -59,7 +59,7 @@
 
         <p>You now have a command that is going to delete your students table.</p>
 
-        <p>So we've seen some ways that malicious people can mess with your site, so how do we prevent it?  There are a couple of things you can do.  One is to limit the input fields not allow certain words or characters.  This isn't the best way to go about it, as your limiting what kinds of usernames and passwords your users can have, and there are still ways around it.  A better way is to use SQL parameters.  These parameters will check to make sure that each input is correct for the column, and that its not executed as part of the SQL.  Lets take a look at how to set this up.</p>
+        <p>So we've seen some ways that malicious people can mess with your site, so how do we prevent it?  There are a couple of things you can do.  One is to limit the input fields to not allow certain words or characters.  This isn't the best way to go about it, as you're limiting what kinds of usernames and passwords your users can have, and there are still ways around it.  A better way is to use SQL parameters.  These parameters will check to make sure that each input is correct for the column, and that it's not executed as part of the SQL.  Lets take a look at how to set this up.</p>
 
         <pre>
           txtUserId = getRequestString("UserId");
