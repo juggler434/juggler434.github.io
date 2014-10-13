@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>What is Rails?</title>
+    <link rel="stylesheet" type="text/css" href="../stylesheets/blog-index-stylesheet.css" />
+  </head>
+  <body>
+    <header>
+      <h1>My DBC Page</h1>
+      <nav>
+        <ul>
+          <li><a href="http://juggler434.github.io">About Me</a></li>
+          <li><a href="http://juggler434.github.io/blog-posts/blog-index.html">Blog</a></li>
+          <li><a href="http://juggler434.github.io/projects/project-index.html">Projects</a></li>
+          <li><a href="http://juggler434.github.io/contact.html">Contact Me</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id='main'>
+
+    <section>
+      <article>
+        <h2 id='blog-title'>What is Rails?</h2><!--blot title goes here-->
+        <p id='date'>Posted October 13, 2014</p><!--date posted goes here-->
+        <p>
+          When working with Ruby and doing research with Ruby, you come across a lot of things talking about Rails, which is short for Ruby on Rails.  You might be wondering "what the heck is Rails?"  Rails is whats called a Web Application Development Framework.  Essentially, it makes coding with Ruby faster and easier by making certain assumptions.  By knowing these assumptions and working with them, you can save yourself a lot of time and effort.
+        </p>
+
+        <p>
+          Rails works with a few key programming concepts.  The two most important of these are the DRY (Don't Repeat Yourself) philosophy, and Convention over Configuration philosophy.
+        </p>
+
+        <p>
+          The DRY principle, as stated in Andrew Hunt and David Thomas' book "The Pragmatic Programmer" is stated as “Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.”  Essentially, repeticious code means that there is more chance of error and updating any application becomes more difficult and time consuming.
+        </p>
+
+        <p>
+          Convention over Configuration is the idea that you only need to write code for unconventional aspects of a program, certain conventional aspect will be assumed.  For example, if the Class Sale is in the program, the corresponding table in the database will be called sales.  You would only have to change this if you wanted a different name for your table.
+        </p>
+
+        <p>
+          Rails utilizes whats called model-view-controller pattern to organize application programming.  In Rails a model maps to a table in a database and a Ruby file.  For example the model class User would be connected to a user.rb file and a users table in the database.  A controller is a componenet that responds to an external request from a web server by determining which file to view.  A view is an .erb file which is compiled into an HTML file at runtime.
+        </p>
+
+        <p>
+          Theres the long and short of what Ruby on Rails is.  Essentially, its a framework to make web development easier and less work.  I hope this helped.  Now go forth and code!
+        </p>
+
+    </section>
