@@ -1,0 +1,35 @@
+/*General Styling*/
+html {
+  background-color: #000080;
+  color: white;
+}
+
+/*Header Styling*/
+header {
+  background-color: #00004c;
+  margin: 1.5em -1em 1.5em -1em;
+  padding: 1em 0em 1em 3em;
+}
+
+/*Table Styling*/
+#table {
+  display: table;
+  width: 85%;
+  background-color: white;
+  color: black;
+  margin: auto;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  border: 1px solid black;
+  text-align: center;
+  padding: 1em;
+  vertical-align: middle;
+}
+
+
