@@ -1,5 +1,10 @@
 
 /*general styling*/
+
+@font-face {
+  font-family: marioFont;
+  src: url(../fonts/SuperPlumberBrothers.ttf);
+}
 body {
   margin: 0;
   padding: 0;
@@ -12,6 +17,7 @@ header {
   color: white;
   margin: 0;
   font-size: 1em;
+  font-family: marioFont;
 }
 
 header h1 {
