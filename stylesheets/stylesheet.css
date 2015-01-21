@@ -25,15 +25,16 @@ body{
   height: 40%;
   margin: auto;
   margin-top: 5%;
+  overflow: hidden;
 
 }
 
 .title_box h1{
   text-align: center;
+  vertical-align: center;
   font-family: MarioBros;
   color: white;
-  font-size: 600%;
-  padding-top: 10%;
+  font-size: 6em;
   width: 95%;
   height: 95%;
 }
