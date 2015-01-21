@@ -31,8 +31,10 @@ body{
   text-align: center;
   font-family: MarioBros;
   color: white;
-  font-size: 7em;
+  font-size: 6em;
   padding-top: 10%;
+  width: 95%;
+  height: 95%;
 }
 
 nav{
