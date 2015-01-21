@@ -16,6 +16,7 @@ html {
 
 body{
   height: 100%;
+  width: 100%
 }
 
 .title_box{
@@ -31,7 +32,7 @@ body{
   text-align: center;
   font-family: MarioBros;
   color: white;
-  font-size: 6em;
+  font-size: 600%;
   padding-top: 10%;
   width: 95%;
   height: 95%;
